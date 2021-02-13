@@ -38,10 +38,19 @@ table.listagem td:nth-child(3) {
   width: 90px;
 }
 
+table.detalhes {
+  width: 100%;
+}
+
+table.detalhes td {
+  padding: 10px;
+  vertical-align: top;
+}
+
 img.mini {
   width: 50px;
 }
 
-table.detalhes {
-  width: 100%;
+img.full {
+  height: 400px;
 }

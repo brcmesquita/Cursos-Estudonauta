@@ -17,8 +17,9 @@
 <div id="corpo">
   <h1>Escolha o seu jogo!</h1>
   <table class="listagem">
-  <?php 
-    $busca = $banco->query("SELECT * FROM jogos");
+  <?php
+    $q = "SELECT j.id, j.nome, g.genero, p.produtora, j.capa FROM jogos j JOIN generos g ON j.genero = g.id JOIN produtoras p ON j.produtora = p.id";
+    $busca = $banco->query($q);
     if (!$busca) {
       echo "<p>Erro na busca por jogos.</p>";
     } else {
@@ -29,6 +30,8 @@
           $t = thumb($reg->capa);
           echo "<tr><td><img src='$t' class='mini'/>";
           echo "<td><a href='detalhes.php?id=$reg->id'>$reg->nome</a>";
+          echo " [$reg->genero]";
+          echo "<br />$reg->produtora";
           echo "<td>Adm";
         }
       }
