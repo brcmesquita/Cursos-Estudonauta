@@ -30,13 +30,13 @@
         if ($busca->num_rows == 1) {
           $reg = $busca->fetch_object();
           $thumbnail = thumb($reg->capa);
-          echo "<tr><td rowspan='3'><img src='$thumbnail' class='full' /></td>";
+          echo "<tr><td rowspan='3'><img src='$thumbnail' class='full' /><";
           echo "<td><h2>$reg->nome</h2>";
           echo "Nota: " . number_format($reg->nota, 1) . "/10";
-          echo "<tr><td>$reg->descricao</td></tr>";
-          echo "<tr><td>Adm</td></tr>";
+          echo "<tr><td>$reg->descricao";
+          echo "<tr><td>Adm";
         } else {
-          echo "<tr><td>Nenhum jogo encontrado.</td></tr>";
+          echo "<tr><td>Nenhum jogo encontrado.";
         }
       }
       ?>

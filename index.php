@@ -14,6 +14,7 @@
     // Aqui são os imports
     require_once "includes/banco.php";
     require_once "includes/funcoes.php";
+    require_once "includes/login.php";
 
     // Aqui é uma condição, onde, ele vai capturar a ordenação que o
     // usuário colocou. Caso ele não coloque nada, a ordenação default
@@ -37,9 +38,6 @@
 
   <!-- Título da página -->
   <h1>Escolha o seu jogo!</h1>
-  <?php echo msg_sucesso('Arquivo aberto com sucesso!'); ?>
-  <?php echo msg_aviso('Arquivo aberto com sucesso!'); ?>
-  <?php echo msg_erro('Arquivo aberto com sucesso!'); ?>
 
   <!-- Opções de ordenação, e caixa de busca -->
   <form method="get" id="busca" action="index.php">
@@ -97,7 +95,7 @@
       echo "<p>Erro na busca por jogos.</p>";
     } else {
       if ($busca->num_rows == 0) {
-        echo "<tr><td>Nenhum registro encontrado.</td></tr>";
+        echo "<tr><td>Nenhum registro encontrado.";
       } else {
         // Aqui nós criamos um Objeto chamado $reg, para receber os registros do banco
         // Para acessar o objeto e recuperar os seus dados, basta chamar o objeto, seguido do item
