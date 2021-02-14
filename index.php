@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>Listagem de Jogos</title>
   <link rel="stylesheet" href="estilos/estilo.css">
 </head>
@@ -36,14 +37,17 @@
 
   <!-- Título da página -->
   <h1>Escolha o seu jogo!</h1>
+  <?php echo msg_sucesso('Arquivo aberto com sucesso!'); ?>
+  <?php echo msg_aviso('Arquivo aberto com sucesso!'); ?>
+  <?php echo msg_erro('Arquivo aberto com sucesso!'); ?>
 
   <!-- Opções de ordenação, e caixa de busca -->
   <form method="get" id="busca" action="index.php">
     Ordenar:
-    <a href="index.php?o=n">Nome</a> |
-    <a href="index.php?o=p">Produtora</a> |
-    <a href="index.php?o=na">Nota Alta</a> |
-    <a href="index.php?o=nb">Nota Baixa</a> |
+    <a href="index.php?o=n&c=<?php echo $chave; ?>">Nome</a> |
+    <a href="index.php?o=p&c=<?php echo $chave; ?>">Produtora</a> |
+    <a href="index.php?o=na&c=<?php echo $chave; ?>">Nota Alta</a> |
+    <a href="index.php?o=nb&c=<?php echo $chave; ?>">Nota Baixa</a> |
     <a href="index.php">Mostrar todos</a> |
     Buscar: <input type='text' name='c' size='10' maxlength='40' /> <input type="submit" value='OK' />
   </form>
